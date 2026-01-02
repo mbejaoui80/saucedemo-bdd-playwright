@@ -48,7 +48,7 @@ pipeline {
                         link: env.BUILD_URL, 
                         result: currentBuild.currentResult, 
                         title: "Build #${env.BUILD_NUMBER} : ÉCHEC", 
-                        webhookURL: 'TON_LIEN_ICI'
+                        webhookURL: 'https://discord.com/channels/1456698633016709235/1456698633750843494'
         }
     }
 }
