@@ -29,8 +29,26 @@ pipeline {
 
     post {
         always {
-            // Génération du rapport Cucumber, quoi qu'il arrive (succès ou échec)
+            // Génère le rapport quoi qu'il arrive
             cucumber fileIncludePattern: 'reports/cucumber_report.json', jsonReportDirectory: 'reports'
+        }
+        success {
+            // Message vert si tout va bien
+            discordSend description: "✅ Les tests ont réussi ! Tout est stable.", 
+                        footer: "Succès", 
+                        link: env.BUILD_URL, 
+                        result: currentBuild.currentResult, 
+                        title: "Build #${env.BUILD_NUMBER} : SUCCÈS", 
+                        webhookURL: 'TON_LIEN_ICI' 
+        }
+        failure {
+            // Message rouge si ça plante
+            discordSend description: "❌ Alerte ! Les tests ont échoué.", 
+                        footer: "Échec", 
+                        link: env.BUILD_URL, 
+                        result: currentBuild.currentResult, 
+                        title: "Build #${env.BUILD_NUMBER} : ÉCHEC", 
+                        webhookURL: 'TON_LIEN_ICI'
         }
     }
 }
