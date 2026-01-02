@@ -1,7 +1,7 @@
 const { Before, After, BeforeAll, AfterAll, setDefaultTimeout } = require('@cucumber/cucumber');
 const { chromium } = require('@playwright/test');
 
-// 💡 LA MODIFICATION EST ICI :
+// 💡 LA MODIFICATION EST ICI : 1
 // On augmente le temps limite à 60 secondes (60 * 1000 ms) pour être tranquille.
 setDefaultTimeout(60 * 1000);
 
