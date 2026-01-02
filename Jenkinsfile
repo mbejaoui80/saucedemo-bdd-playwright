@@ -39,7 +39,7 @@ pipeline {
                         link: env.BUILD_URL, 
                         result: currentBuild.currentResult, 
                         title: "Build #${env.BUILD_NUMBER} : SUCCÈS", 
-                        webhookURL: 'https://discord.com/channels/1456698633016709235/1456698633750843494' 
+                        webhookURL: 'https://discord.com/api/webhooks/1456698900277629103/cmlLptwcJr2qfYGdux8jrZlZxMwU4Zu9B0RhzU4OE-leiet1sXskvS2Mg95T3fw3DHdh' 
         }
         failure {
             // Message rouge si ça plante
@@ -48,7 +48,7 @@ pipeline {
                         link: env.BUILD_URL, 
                         result: currentBuild.currentResult, 
                         title: "Build #${env.BUILD_NUMBER} : ÉCHEC", 
-                        webhookURL: 'https://discord.com/channels/1456698633016709235/1456698633750843494'
+                        webhookURL: 'https://discord.com/api/webhooks/1456698900277629103/cmlLptwcJr2qfYGdux8jrZlZxMwU4Zu9B0RhzU4OE-leiet1sXskvS2Mg95T3fw3DHdh'
         }
     }
 }
